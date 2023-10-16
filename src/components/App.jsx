@@ -1,16 +1,18 @@
+import { NavLink } from 'react-router-dom';
+
+import { StyledAppContainer } from './App.styled';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <StyledAppContainer>
+      <nav className="naw">
+        <NavLink className="header_link" to="/">
+          Home
+        </NavLink>
+        <NavLink className="header_link" to="/movies">
+          Movies
+        </NavLink>
+      </nav>
+    </StyledAppContainer>
   );
 };
