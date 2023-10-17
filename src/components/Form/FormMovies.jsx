@@ -1,16 +1,15 @@
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import { StyledFormMovies } from './FormMovies.styled';
-import { useSearchParams } from 'react-router-dom';
+// import { useSearchParams } from 'react-router-dom';
 
 const FormMovies = () => {
-  const [searchParams, setSearchParams] = useSearchParams;
+  // const [searchParams, setSearchParams] = useSearchParams;
 
-  const query = searchParams.get('query');
+  // const query = searchParams.get('query');
 
-  useEffect(() => {
-    if (!query) return;
-    console.log('jbjhbhb');
-  }, [query]);
+  // useEffect(() => {
+  //   if (!query) return;
+  // }, [query]);
 
   const handleFormSubmit = event => {
     event.preventDefault();
