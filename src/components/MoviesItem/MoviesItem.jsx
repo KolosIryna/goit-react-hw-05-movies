@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MoviesItem = ({ id }) => {
+import { StyledMovieItem } from './MoviesItem.styled';
+
+const MoviesItem = ({ id, image, title }) => {
   return (
-    <li>
-      <Link to={`/movies/${id}`}></Link>
-    </li>
+    <StyledMovieItem>
+      <Link to={`/movies/${id}`} className="link">
+        <img className="image" src={image} alt={title} />
+        <h2 className="title">{title}</h2>
+      </Link>
+    </StyledMovieItem>
   );
 };
 

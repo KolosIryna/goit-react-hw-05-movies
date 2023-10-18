@@ -2,7 +2,7 @@ import React from 'react';
 import FormMovies from '../components/Form/FormMovies';
 
 const Movies = () => {
-  return <FormMovies />;
+  return <div>{/* <FormMovies /> */}</div>;
 };
 
 export default Movies;

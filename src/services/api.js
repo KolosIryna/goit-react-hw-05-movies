@@ -1,16 +1,15 @@
 import axios from 'axios';
 
-const BASE_URL =
-  'https://api.themoviedb.org/3/movie/157336?api_key=19c3c1131366dcbffe75fc92ac012355';
+const BASE_URL = 'https://api.themoviedb.org/3/';
 const API_KEY = '19c3c1131366dcbffe75fc92ac012355';
 
-export const getImage = async (value, page) => {
+export const getMovieTrends = async () => {
   try {
     const { data } = await axios.get(
-      `${BASE_URL}?q=${value}&page=${page}&key=${API_KEY}`
+      `${BASE_URL}trending/movie/day?api_key=${API_KEY}`
     );
-    return data;
+    return data.results;
   } catch (error) {
-    throw new Error('Ooops Error');
+    throw new Error('Ooops Error. No movies to display');
   }
 };

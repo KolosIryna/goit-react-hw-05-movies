@@ -1,10 +1,12 @@
 import MoviesItem from 'components/MoviesItem/MoviesItem';
 import { StyledMoviesList } from './MoviesList.styled';
 
-const MoviesList = () => {
+const MoviesList = ({ movies }) => {
   return (
     <StyledMoviesList>
-      <MoviesItem />
+      {movies.map(({ id, image, title }) => (
+        <MoviesItem key={id} image={image} title={title} />
+      ))}
     </StyledMoviesList>
   );
 };
