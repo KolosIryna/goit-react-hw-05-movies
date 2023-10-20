@@ -13,3 +13,47 @@ export const getMovieTrends = async () => {
     throw new Error('Ooops Error. No movies to display');
   }
 };
+
+export const getMoviesForQuery = async query => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}`
+    );
+    return data.results;
+  } catch (error) {
+    throw new Error('Ooops Error.');
+  }
+};
+
+export const getMovieDetails = async moviesId => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}movie/${moviesId}?api_key=${API_KEY}`
+    );
+    return data;
+  } catch (error) {
+    throw new Error('Ooops Error. No details');
+  }
+};
+
+export const getMovieCredits = async moviesId => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}movie/${moviesId}/credits?api_key=${API_KEY}`
+    );
+    return data;
+  } catch (error) {
+    throw new Error('Ooops Error.');
+  }
+};
+
+export const getMovieReviews = async moviesId => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}movie/${moviesId}/reviews?api_key=${API_KEY}`
+    );
+    return data;
+  } catch (error) {
+    throw new Error('Ooops Error. ');
+  }
+};
