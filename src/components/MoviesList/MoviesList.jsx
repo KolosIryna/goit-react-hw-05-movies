@@ -4,8 +4,8 @@ import { StyledMoviesList } from './MoviesList.styled';
 const MoviesList = ({ movies }) => {
   return (
     <StyledMoviesList>
-      {movies.map(({ id, image, title }) => (
-        <MoviesItem key={id} image={image} title={title} />
+      {movies.map(({ id, poster_path, title }) => (
+        <MoviesItem key={id} image={poster_path} title={title} />
       ))}
     </StyledMoviesList>
   );

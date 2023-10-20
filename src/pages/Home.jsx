@@ -29,9 +29,9 @@ const Home = () => {
   return (
     <StyledHome>
       <h1 className="title">Trend of the Day</h1>
+      <MoviesList movies={movies} />
       {isLoading && <Loader />}
       {error && <p>{error}</p>}
-      <MoviesList movies={movies} />
     </StyledHome>
   );
 };
