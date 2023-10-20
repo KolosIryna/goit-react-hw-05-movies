@@ -4,6 +4,8 @@ import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import { getMovieDetails } from 'services/api';
 import Loader from 'components/Loader/Loader';
 
+import { StyledMovieDetails } from './MovieDetails.styled';
+
 const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,10 +33,10 @@ const MovieDetails = () => {
   const { title, overview, genres, poster_path } = movie;
 
   return (
-    <>
+    <StyledMovieDetails>
       <div>
         <Link to={from || '/'}>
-          <button>Go back</button>
+          <button className="button">Go back</button>
         </Link>
       </div>
       <div>
@@ -44,12 +46,20 @@ const MovieDetails = () => {
           width="300"
         />
         <h2>{title}</h2>
-        <p>Overview: {overview}</p>
+        <p>
+          <b>Overview: </b>
+          {overview}
+        </p>
         {genres && genres.length > 0 && (
-          <p>Genres: {genres.map(genre => genre.name).join(', ')}</p>
+          <p>
+            <b>Genres: </b>
+            {genres.map(genre => genre.name).join(', ')}
+          </p>
         )}
         <div>
-          Additional information:
+          <p>
+            <b> Additional information:</b>
+          </p>
           <ul>
             <li>
               <Link to={`cast`}>Cast</Link>
@@ -63,7 +73,7 @@ const MovieDetails = () => {
         {error && <p>{error}</p>}
         <Outlet />
       </div>
-    </>
+    </StyledMovieDetails>
   );
 };
 

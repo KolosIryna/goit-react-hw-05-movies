@@ -18,6 +18,7 @@ const FormMovies = ({ setSearchParams }) => {
           autoComplete="off"
           autoFocus
           required
+          placeholder="Enter the name of the movie"
         />
       </label>
       <button type="submit" className="button">

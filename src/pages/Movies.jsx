@@ -6,7 +6,8 @@ import { getMoviesForQuery } from 'services/api';
 import FormMovies from '../components/Form/FormMovies';
 import MoviesList from 'components/MoviesList/MoviesList';
 import Loader from 'components/Loader/Loader';
-import Button from 'components/Button/Button';
+import Button from 'components/ButtonLoadMore/Button';
+import { StyledMovie } from './Movies.styled';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -39,9 +40,9 @@ const Movies = () => {
   };
 
   return (
-    <div>
+    <StyledMovie>
       <FormMovies setSearchParams={setSearchParams} />
-      <div>
+      <div className="container">
         {movies.length > 0 && <MoviesList movies={movies} />}
         {movies.length !== movies && !isLoading && (
           <Button onClick={loadMore} />
@@ -49,7 +50,7 @@ const Movies = () => {
         {isLoading && <Loader />}
         {error && <p>{error}</p>}
       </div>
-    </div>
+    </StyledMovie>
   );
 };
 

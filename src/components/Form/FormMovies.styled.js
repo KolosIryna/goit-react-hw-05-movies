@@ -4,7 +4,8 @@ export const StyledFormMovies = styled.form`
   display: flex;
   justify-content: center;
   align-items: stretch;
-  margin-top: 20px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 
   .input {
     width: 300px;
