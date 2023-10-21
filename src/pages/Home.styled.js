@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledHome = styled.div`
-  max-width: 1440px;
-  padding-top: 15px;
+  padding: 20px;
   margin: 0 auto;
   background-image: url(https://png.pngtree.com/thumb_back/fw800/background/20210327/pngtree-sky-petals-movie-film-powder-blue-dreamy-background-image_595553.jpg);
   background-position: center;

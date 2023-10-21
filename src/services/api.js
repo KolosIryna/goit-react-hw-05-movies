@@ -14,10 +14,10 @@ export const getMovieTrends = async () => {
   }
 };
 
-export const getMoviesForQuery = async query => {
+export const getMoviesForQuery = async (query, page) => {
   try {
     const { data } = await axios.get(
-      `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}`
+      `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}&page=${page}`
     );
     return data.results;
   } catch (error) {

@@ -6,6 +6,7 @@ export const StyledMovieDetails = styled.div`
   row-gap: 24px;
   column-gap: 24px;
   padding: 20px;
+  margin: 0 auto;
 
   .button {
     padding: 8px 16px;
@@ -19,3 +20,5 @@ export const StyledMovieDetails = styled.div`
     }
   }
 `;
+
+export const StyledCard = styled.div``;
