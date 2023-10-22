@@ -11,13 +11,14 @@ import { getMovieDetails } from 'services/api';
 import Loader from 'components/Loader/Loader';
 
 import { StyledCard, StyledMovieDetails } from './MovieDetails.styled';
+import { useRef } from 'react';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
-  const from = location.state?.from;
+  const from = useRef(location.state?.from && '/');
 
   const { movieId } = useParams();
 
@@ -37,18 +38,24 @@ const MovieDetails = () => {
   }, [movieId]);
 
   const { title, overview, genres, poster_path } = movie;
+  const defaultImg =
+    'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
 
   return (
     <>
       <StyledMovieDetails>
         <div>
-          <Link to={from || '/'}>
+          <Link to={from.current}>
             <button className="button">Go back</button>
           </Link>
         </div>
         <StyledCard>
           <img
-            src={`https://image.tmdb.org/t/p/w300${poster_path || ''}`}
+            src={
+              poster_path
+                ? `https://image.tmdb.org/t/p/w300${poster_path}`
+                : defaultImg
+            }
             alt={title}
             width="300"
           />

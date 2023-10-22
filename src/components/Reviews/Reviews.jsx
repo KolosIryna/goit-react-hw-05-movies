@@ -14,7 +14,7 @@ const Reviews = () => {
         const reviewsData = await getMovieReviews(movieId);
         console.log('Movie ID:', movieId);
 
-        setReviews(reviewsData);
+        setReviews(reviewsData.results);
       } catch (error) {
         console.log(error.message);
       }

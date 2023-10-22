@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import { getMoviesForQuery } from 'services/api';
 
-import FormMovies from '../components/Form/FormMovies';
+import FormMovies from '../../components/Form/FormMovies';
 import MoviesList from 'components/MoviesList/MoviesList';
 import Loader from 'components/Loader/Loader';
 import Button from 'components/ButtonLoadMore/Button';
