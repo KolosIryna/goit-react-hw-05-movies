@@ -18,7 +18,7 @@ const MovieDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
-  const from = useRef(location.state?.from && '/');
+  const from = useRef(location.state?.from);
 
   const { movieId } = useParams();
 
@@ -45,7 +45,7 @@ const MovieDetails = () => {
     <>
       <StyledMovieDetails>
         <div>
-          <Link to={from.current}>
+          <Link to={from.current || '/'}>
             <button className="button">Go back</button>
           </Link>
         </div>
