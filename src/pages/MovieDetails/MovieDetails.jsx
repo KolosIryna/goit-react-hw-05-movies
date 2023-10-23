@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import {
   Link,
   NavLink,
@@ -85,7 +85,10 @@ const MovieDetails = () => {
           </div>
           {isLoading && <Loader />}
           {error && <p>{error}</p>}
-          <Outlet />
+
+          <Suspense fallback={<Loader />}>
+            <Outlet />
+          </Suspense>
         </StyledCard>
       </StyledMovieDetails>
     </>
